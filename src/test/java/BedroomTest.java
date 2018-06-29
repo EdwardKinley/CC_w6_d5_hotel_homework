@@ -14,6 +14,7 @@ public class BedroomTest {
     Guest guest3;
     Guest guest4;
     ArrayList<Guest> guests1;
+    ArrayList<Guest> guests2;
 
     @Before
     public void before() {
@@ -22,11 +23,14 @@ public class BedroomTest {
         guest3 = new Guest("Erin");
         guest4 = new Guest("Colby");
         guests1 = new ArrayList<>();
+        guests2 = new ArrayList<>();
         guests1.add(guest1);
         guests1.add(guest2);
         guests1.add(guest3);
-        bedroom1 = new Bedroom(30, guests1,101, 30, "family");
-        bedroom2 = new Bedroom(3, guests1,234, 40, "double");
+        guests2.add(guest1);
+        guests2.add(guest2);
+        bedroom1 = new Bedroom(BedroomType.FAMILY.getSleeps(), guests1,101, 30, BedroomType.FAMILY.getType());
+        bedroom2 = new Bedroom(BedroomType.DOUBLE.getSleeps(), guests2,234, 40, BedroomType.DOUBLE.getType());
     }
 
     @Test
@@ -42,12 +46,12 @@ public class BedroomTest {
 
     @Test
     public void getCapacity() {
-        assertEquals(30, bedroom1.getCapacity());
+        assertEquals(4, bedroom1.getCapacity());
     }
 
     @Test
     public void getRemainingSpace() {
-        assertEquals(27, bedroom1.getRemainingSpace());
+        assertEquals(1, bedroom1.getRemainingSpace());
     }
 
     @Test
@@ -58,8 +62,8 @@ public class BedroomTest {
 
     @Test
     public void cannotAddGuest() {
-        bedroom2.addGuest(guest4);
-        assertEquals(3, bedroom2.getNumberOfGuests());
+        bedroom2.addGuest(guest3);
+        assertEquals(2, bedroom2.getNumberOfGuests());
     }
 
     @Test
