@@ -76,4 +76,10 @@ public class BedroomTest {
         assertEquals("family", bedroom1.getType());
     }
 
+    @Test
+    public void removeGuests() {
+        bedroom1.removeGuests();
+        assertEquals(0, bedroom1.getNumberOfGuests());
+    }
+
 }

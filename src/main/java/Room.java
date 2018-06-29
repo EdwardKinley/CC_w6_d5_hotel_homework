@@ -28,5 +28,9 @@ public abstract class Room {
         }
     }
 
+    public void removeGuests() {
+        this.guests.clear();
+    }
+
 
 }
