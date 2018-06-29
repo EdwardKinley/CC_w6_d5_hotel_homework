@@ -57,4 +57,22 @@ public class Hotel {
     public ArrayList<String> getNamesOfGuestsBookedIntoRoom(Room room) {
         return room.getGuestsNames();
     }
+
+    public int getNumberOfVacantBedrooms()
+    {
+        ArrayList<Bedroom> vacantBedrooms = new ArrayList<>();
+        for (Bedroom bedroom : bedrooms)
+        { if (bedroom.getGuests().size() == 0)
+        {vacantBedrooms.add(bedroom);}}
+        return vacantBedrooms.size();
+    }
+
+    public ArrayList<Bedroom> getVacantBedrooms() {
+        ArrayList<Bedroom> vacantBedrooms = new ArrayList<>();
+        for (Bedroom bedroom : bedrooms)
+        { if (bedroom.getGuests().size() == 0)
+        {vacantBedrooms.add(bedroom);}}
+        return vacantBedrooms;
+
+    }
 }

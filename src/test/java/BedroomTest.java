@@ -105,10 +105,10 @@ public class BedroomTest {
 
     @Test
     public void getGuestsNames() {
-        ArrayList<String> expected_guests_names = new ArrayList<String>();
-        expected_guests_names.add("Edward");
-        expected_guests_names.add("Cat");
-        expected_guests_names.add("Erin");
-        assertEquals(expected_guests_names, bedroom1.getGuestsNames());
+        ArrayList<String> expectedGuestsNames = new ArrayList<>();
+        expectedGuestsNames.add("Edward");
+        expectedGuestsNames.add("Cat");
+        expectedGuestsNames.add("Erin");
+        assertEquals(expectedGuestsNames, bedroom1.getGuestsNames());
     }
 }

@@ -37,7 +37,7 @@ public abstract class Room {
     }
 
     public ArrayList<String> getGuestsNames() {
-        ArrayList<String> guestsNames = new ArrayList<String>();
+        ArrayList<String> guestsNames = new ArrayList<>();
         for (Guest guest : guests) {
             guestsNames.add(guest.getName());
         }

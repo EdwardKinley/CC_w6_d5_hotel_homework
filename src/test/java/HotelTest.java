@@ -14,12 +14,16 @@ public class HotelTest {
     ArrayList<Room> rooms;
     Bedroom bedroom1;
     Bedroom bedroom2;
+    Bedroom bedroom3;
+    Bedroom bedroom4;
     Guest guest1;
     Guest guest2;
     Guest guest3;
     Guest guest4;
     ArrayList<Guest> guests1;
     ArrayList<Guest> guests2;
+    ArrayList<Guest> guests3;
+    ArrayList<Guest> guests4;
 
     @Before
     public void before() {
@@ -29,6 +33,8 @@ public class HotelTest {
         guest4 = new Guest("Colby");
         guests1 = new ArrayList<>();
         guests2 = new ArrayList<>();
+        guests3 = new ArrayList<>();
+        guests4 = new ArrayList<>();
         guests1.add(guest1);
         guests1.add(guest2);
         guests1.add(guest3);
@@ -56,6 +62,18 @@ public class HotelTest {
                 234,
                 40,
                 BedroomType.DOUBLE.getType());
+        bedroom3 = new Bedroom(
+                BedroomType.SINGLE.getSleeps(),
+                guests3,
+                111,
+                29,
+                BedroomType.SINGLE.getType());
+        bedroom4 = new Bedroom(
+                BedroomType.SINGLE.getSleeps(),
+                guests4,
+                112,
+                129,
+                BedroomType.SINGLE.getType());
     }
 
     @Test
@@ -106,6 +124,29 @@ public class HotelTest {
         ArrayList<String> guestsNames2 = new ArrayList<>();
         bedroom1.removeGuests();
         assertEquals(guestsNames2, hotel.getNamesOfGuestsBookedIntoRoom(bedroom1));
+    }
+
+    @Test
+    public void canGetNumberOfVacantBedrooms() {
+        hotel.addBedroom(bedroom1);
+        hotel.addBedroom(bedroom2);
+        hotel.addBedroom(bedroom3);
+        assertEquals(1, hotel.getNumberOfVacantBedrooms());
+        hotel.addBedroom(bedroom4);
+        assertEquals(2, hotel.getNumberOfVacantBedrooms());
+    }
+
+    @Test
+    public void canGetVacantBedrooms() {
+        hotel.addBedroom(bedroom1);
+        hotel.addBedroom(bedroom2);
+        hotel.addBedroom(bedroom3);
+        ArrayList<Bedroom> expectedVacantBedrooms = new ArrayList<>();
+        expectedVacantBedrooms.add(bedroom3);
+        assertEquals(expectedVacantBedrooms, hotel.getVacantBedrooms());
+        hotel.addBedroom(bedroom4);
+        expectedVacantBedrooms.add(bedroom4);
+        assertEquals(expectedVacantBedrooms, hotel.getVacantBedrooms());
     }
 
 
