@@ -29,8 +29,18 @@ public class BedroomTest {
         guests1.add(guest3);
         guests2.add(guest1);
         guests2.add(guest2);
-        bedroom1 = new Bedroom(BedroomType.FAMILY.getSleeps(), guests1,101, 30, BedroomType.FAMILY.getType());
-        bedroom2 = new Bedroom(BedroomType.DOUBLE.getSleeps(), guests2,234, 40, BedroomType.DOUBLE.getType());
+        bedroom1 = new Bedroom(
+                BedroomType.FAMILY.getSleeps(),
+                guests1,
+                101,
+                30,
+                BedroomType.FAMILY.getType());
+        bedroom2 = new Bedroom(
+                BedroomType.DOUBLE.getSleeps(),
+                guests2,
+                234,
+                40,
+                BedroomType.DOUBLE.getType());
     }
 
     @Test
@@ -106,5 +116,4 @@ public class BedroomTest {
         assertEquals(expected_guests, bedroom1.getGuestsNames());
         System.out.println(expected_guests);
     }
-
 }

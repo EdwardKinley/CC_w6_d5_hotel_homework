@@ -6,7 +6,12 @@ public class Bedroom extends Room {
     private int rate;
     private String type;
 
-    public Bedroom(int capacity, ArrayList<Guest> guests, int number, int rate, String type) {
+    public Bedroom(
+            int capacity,
+            ArrayList<Guest> guests,
+            int number,
+            int rate,
+            String type) {
         super(capacity, guests);
         this.number = number;
         this.rate = rate;
