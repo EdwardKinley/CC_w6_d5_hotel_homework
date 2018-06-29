@@ -38,13 +38,15 @@ public class Hotel {
         this.rooms.add(bedroom);
     }
 
-    public void checkGuestIntoRoom(Guest guest, Bedroom bedroom) {
-        bedroom.addGuest(guest);
+    public void checkGuestIntoRoom(Guest guest, Room room) {
+        room.addGuest(guest);
     }
 
     public int getNumberOfGuestsInRoom(Room room) {
         return room.getNumberOfGuests();
     }
 
-
+    public void checkGuestOutOfRoom(Guest guest, Room room) {
+        room.getGuests().remove(guest);
+    }
 }
