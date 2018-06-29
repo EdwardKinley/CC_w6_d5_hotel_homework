@@ -49,4 +49,12 @@ public class Hotel {
     public void checkGuestOutOfRoom(Guest guest, Room room) {
         room.getGuests().remove(guest);
     }
+
+    public ArrayList<Guest> getGuestsBookedIntoRoom(Room room) {
+        return room.getGuests();
+    }
+
+    public ArrayList<String> getNamesOfGuestsBookedIntoRoom(Room room) {
+        return room.getGuestsNames();
+    }
 }

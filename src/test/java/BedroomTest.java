@@ -101,19 +101,14 @@ public class BedroomTest {
     @Test
     public void getGuests() {
         assertEquals(guests1, bedroom1.getGuests());
-        for (Guest guest:
-             guests1) {
-            System.out.println(guest.getName());
-        }
     }
 
     @Test
     public void getGuestsNames() {
-        ArrayList<String> expected_guests = new ArrayList<String>();
-        expected_guests.add("Edward");
-        expected_guests.add("Cat");
-        expected_guests.add("Erin");
-        assertEquals(expected_guests, bedroom1.getGuestsNames());
-        System.out.println(expected_guests);
+        ArrayList<String> expected_guests_names = new ArrayList<String>();
+        expected_guests_names.add("Edward");
+        expected_guests_names.add("Cat");
+        expected_guests_names.add("Erin");
+        assertEquals(expected_guests_names, bedroom1.getGuestsNames());
     }
 }

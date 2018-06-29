@@ -92,5 +92,21 @@ public class HotelTest {
         assertEquals(2, hotel.getNumberOfGuestsInRoom(bedroom1));
     }
 
+    @Test
+    public void canGetGuestsBookedInRoom() {
+        assertEquals(guests2, hotel.getGuestsBookedIntoRoom(bedroom2));
+    }
+
+    @Test
+    public void canGetNamesOfGuestsBookedIntoRoom() {
+        ArrayList<String> guestsNames1 = new ArrayList<>();
+        guestsNames1.add(guest1.getName());
+        guestsNames1.add(guest2.getName());
+        assertEquals(guestsNames1, hotel.getNamesOfGuestsBookedIntoRoom(bedroom2));
+        ArrayList<String> guestsNames2 = new ArrayList<>();
+        bedroom1.removeGuests();
+        assertEquals(guestsNames2, hotel.getNamesOfGuestsBookedIntoRoom(bedroom1));
+    }
+
 
 }
