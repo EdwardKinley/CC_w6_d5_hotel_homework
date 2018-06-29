@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
-public class DiningRoomTest {
+public class ConferenceRoomTest {
 
-    DiningRoom diningRoom1;
-    DiningRoom diningRoom2;
+    ConferenceRoom conferenceRoom1;
+    ConferenceRoom conferenceRoom2;
     Guest guest1;
     Guest guest2;
     Guest guest3;
@@ -25,41 +25,41 @@ public class DiningRoomTest {
         guests1.add(guest1);
         guests1.add(guest2);
         guests1.add(guest3);
-        diningRoom1 = new DiningRoom(30, guests1,"The Ivy");
-        diningRoom2 = new DiningRoom(3, guests1,"The Lettuce");
+        conferenceRoom1 = new ConferenceRoom(30, guests1,"Sir Walter Scott");
+        conferenceRoom2 = new ConferenceRoom(3, guests1,"Neil Armstrong");
     }
 
     @Test
     public void getName() {
-        assertEquals("The Ivy", diningRoom1.getName());
+        assertEquals("Sir Walter Scott", conferenceRoom1.getName());
     }
 
     @Test
     public void getNumberOfGuests() {
-        assertEquals(3, diningRoom1.getGuests().size());
-        assertEquals(3, diningRoom1.getNumberOfGuests());
+        assertEquals(3, conferenceRoom1.getGuests().size());
+        assertEquals(3, conferenceRoom1.getNumberOfGuests());
     }
 
     @Test
     public void getCapacity() {
-        assertEquals(30, diningRoom1.getCapacity());
+        assertEquals(30, conferenceRoom1.getCapacity());
     }
 
     @Test
     public void getRemainingSpace() {
-        assertEquals(27, diningRoom1.getRemainingSpace());
+        assertEquals(27, conferenceRoom1.getRemainingSpace());
     }
 
     @Test
     public void canAddGuest() {
-        diningRoom1.addGuest(guest4);
-        assertEquals(4, diningRoom1.getNumberOfGuests());
+        conferenceRoom1.addGuest(guest4);
+        assertEquals(4, conferenceRoom1.getNumberOfGuests());
     }
 
     @Test
     public void cannotAddGuest() {
-        diningRoom2.addGuest(guest4);
-        assertEquals(3, diningRoom2.getNumberOfGuests());
+        conferenceRoom2.addGuest(guest4);
+        assertEquals(3, conferenceRoom2.getNumberOfGuests());
     }
 
 }

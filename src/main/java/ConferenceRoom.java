@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 
-public class DiningRoom extends Room {
+public class ConferenceRoom extends Room {
 
     private String name;
+    private int rate;
 
-    public DiningRoom(int capacity, ArrayList<Guest> guests, String name) {
+    public ConferenceRoom(int capacity, ArrayList<Guest> guests, String name) {
         super(capacity, guests);
         this.name = name;
     }
