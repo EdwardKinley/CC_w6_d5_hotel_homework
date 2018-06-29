@@ -24,4 +24,27 @@ public class Hotel {
     public String getName() {
         return this.name;
     }
+
+    public ArrayList<Bedroom> getBedrooms() {
+        return this.bedrooms;
+    }
+
+    public int getNumberOfBedrooms() {
+        return this.bedrooms.size();
+    }
+
+    public void addBedroom(Bedroom bedroom) {
+        this.bedrooms.add(bedroom);
+        this.rooms.add(bedroom);
+    }
+
+    public void checkGuestIntoRoom(Guest guest, Bedroom bedroom) {
+        bedroom.addGuest(guest);
+    }
+
+    public int getNumberOfGuestsInRoom(Room room) {
+        return room.getNumberOfGuests();
+    }
+
+
 }
