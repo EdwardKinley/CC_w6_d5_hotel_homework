@@ -82,4 +82,10 @@ public class BedroomTest {
         assertEquals(0, bedroom1.getNumberOfGuests());
     }
 
+    @Test
+    public void removeGuest() {
+        bedroom1.removeGuest(guest1);
+        assertEquals(2, bedroom1.getNumberOfGuests());
+    }
+
 }
