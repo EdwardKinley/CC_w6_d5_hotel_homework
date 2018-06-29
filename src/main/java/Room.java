@@ -36,5 +36,13 @@ public abstract class Room {
         this.guests.remove(guest);
     }
 
+    public ArrayList<String> getGuestsNames() {
+        ArrayList<String> guestsNames = new ArrayList<String>();
+        for (Guest guest : guests) {
+            guestsNames.add(guest.getName());
+        }
+        return guestsNames;
+    }
+
 
 }
