@@ -25,8 +25,8 @@ public class ConferenceRoomTest {
         guests1.add(guest1);
         guests1.add(guest2);
         guests1.add(guest3);
-        conferenceRoom1 = new ConferenceRoom(30, guests1,"Sir Walter Scott");
-        conferenceRoom2 = new ConferenceRoom(3, guests1,"Neil Armstrong");
+        conferenceRoom1 = new ConferenceRoom(30, guests1,"Sir Walter Scott", 300);
+        conferenceRoom2 = new ConferenceRoom(3, guests1,"Neil Armstrong", 200);
     }
 
     @Test
@@ -60,6 +60,11 @@ public class ConferenceRoomTest {
     public void cannotAddGuest() {
         conferenceRoom2.addGuest(guest4);
         assertEquals(3, conferenceRoom2.getNumberOfGuests());
+    }
+
+    @Test
+    public void getRate() {
+        assertEquals(300, conferenceRoom1.getRate());
     }
 
 }
