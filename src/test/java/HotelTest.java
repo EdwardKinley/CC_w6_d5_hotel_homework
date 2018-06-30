@@ -55,25 +55,29 @@ public class HotelTest {
                 guests1,
                 101,
                 30,
-                BedroomType.FAMILY.getType());
+                BedroomType.FAMILY.getType(),
+                2);
         bedroom2 = new Bedroom(
                 BedroomType.DOUBLE.getSleeps(),
                 guests2,
                 234,
                 40,
-                BedroomType.DOUBLE.getType());
+                BedroomType.DOUBLE.getType(),
+                3);
         bedroom3 = new Bedroom(
                 BedroomType.SINGLE.getSleeps(),
                 guests3,
                 111,
                 29,
-                BedroomType.SINGLE.getType());
+                BedroomType.SINGLE.getType(),
+                0);
         bedroom4 = new Bedroom(
                 BedroomType.SINGLE.getSleeps(),
                 guests4,
                 112,
                 129,
-                BedroomType.SINGLE.getType());
+                BedroomType.SINGLE.getType(),
+                0);
     }
 
     @Test
@@ -91,12 +95,32 @@ public class HotelTest {
     }
 
     @Test
-    public void canCheckGuestIntoRoom() {
+    public void canCheckGuestIntoBedroom() {
         hotel.addBedroom(bedroom1);
         assertEquals(3, hotel.getNumberOfGuestsInRoom(bedroom1));
-        hotel.checkGuestIntoRoom(guest4, bedroom1);
+        hotel.checkGuestIntoBedroom(guest4, bedroom1,7);
         assertEquals(4, hotel.getNumberOfGuestsInRoom(bedroom1));
+        assertEquals(7, bedroom1.getNights());
     }
+
+    @Test
+    public void canAddGuest() {
+        bedroom1.addGuest(guest4,1);
+        assertEquals(4, bedroom1.getNumberOfGuests());
+        assertEquals(2, bedroom1.getNights());
+        bedroom1.removeGuest(guest4);
+        bedroom1.addGuest(guest4,6);
+        assertEquals(4, bedroom1.getNumberOfGuests());
+        assertEquals(6, bedroom1.getNights());
+    }
+
+    @Test
+    public void cannotAddGuest() {
+        bedroom2.addGuest(guest3, 7);
+        assertEquals(2, bedroom2.getNumberOfGuests());
+        assertEquals(3, bedroom2.getNights());
+    }
+
 
     @Test
     public void canCheckGuestOutOfRoom() {

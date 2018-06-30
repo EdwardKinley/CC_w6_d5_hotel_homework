@@ -42,6 +42,10 @@ public class Hotel {
         room.addGuest(guest);
     }
 
+    public void checkGuestIntoBedroom(Guest guest, Bedroom bedroom, int nights) {
+        bedroom.addGuest(guest, nights);
+    }
+
     public int getNumberOfGuestsInRoom(Room room) {
         return room.getNumberOfGuests();
     }
