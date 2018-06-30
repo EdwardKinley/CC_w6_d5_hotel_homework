@@ -21,13 +21,9 @@ public class Bedroom extends Room {
     public int getNumber() {
         return this.number;
     }
-
     public int getRate() {
         return this.rate;
     }
-
-    public String getType() {
-        return this.type;
-    }
+    public String getType() { return this.type; }
 
 }
